@@ -1,0 +1,33 @@
+{%extends 'web/blank-page.html'%}
+{%block content%}
+
+				<div class="row">
+                    <div class="col-lg-6">
+					<h4>發佈新文章:</h4>
+                        <form action="/web/add_record" method="POST" accept-charset="utf-8">
+						{%csrf_token%}
+						<table>
+							{{post_form.as_table}}
+						</table>
+                         <input type="submit" name="add_record" value="提交">
+                        </form>
+
+                    </div>
+					<div class="col-lg-6">
+					{%for post in posts%}<p>
+					<p>
+					@發佈時間:{{post.create_date}}</p>
+					<h3><a href="/web/{{post.id}}">{{post.title}}</a></h3>
+					{%endfor%}
+					</div>
+                    
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    {%endblock%}

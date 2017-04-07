@@ -1,0 +1,67 @@
+{%extends 'web/blank-page.html'%}
+{%block content%}
+
+<body>
+
+    
+                <!-- Page Heading -->
+                 <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-4 text-center" >
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h2>選取星座</h2>
+								<form name='myform1' action="" method='GET'>
+									<select name='sfire'>
+									{%for f in fire%}
+									<option value='{{f.ename}}'>{{f.sname}}</option>
+									{%endfor%}
+									<br><br>
+									{%for e in earth%}
+									<option value="{{e.ename}}">{{e.sname}}</option>
+									{%endfor%}
+									<br><br>
+									{%for a in air%}
+									<option value="{{a.ename}}">{{a.sname}}</option>
+									{%endfor%}
+									<br><br>
+									{%for w in water%}
+							<option value='{{w.ename}}'>{{w.sname}}</option>
+							{%endfor%}
+							<br><br>
+									<input type='submit'>
+									</select>
+								</form>
+					        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h2>查詢結果</h2>
+								
+		             {%for outf in outfire%}	
+							{%if outf.photo%}
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<img src="..\..\static\images\{{outf.photo}}">
+							{%endif%}										 
+							<h3>星座: {{outf.name}}</h3><br>			 
+							<h3>日期: {{outf.dateu}}</h3><br>
+							<h3>個性: {{outf.personality}}</h3><br>
+							<h3>幸運色: {{outf.color}}</h3>
+							{% empty %}
+			<h2>選擇星座</h2>
+		</div>
+							{%endfor%}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+            <!-- /.container-fluid -->
+
+        <!-- /#page-wrapper -->
+		{%endblock%}

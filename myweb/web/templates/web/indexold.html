@@ -1,0 +1,169 @@
+{%extends 'web/blank-page.html'%}
+{%block content%}
+
+<body>
+
+    
+                <!-- Page Heading -->
+                 <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h2>火象星座</h2>
+								<form name='myform1' action="" method='GET'>
+									<select name='sfire'>
+									{%for f in fire%}
+									<option value='{{f.ename}}'>{{f.sname}}</option>
+									{%endfor%}
+									<br><br>
+									<input type='submit'>
+									</select>
+								</form>
+								{{sfire}}
+							{%for outf in outfire%}
+							{{outf.name}}
+							{{outf.dateU}}
+							{{outf.personality}}
+							{{outf.color}}
+							{%endfor%}
+					        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h2>土象星座</h2>
+								<form name='myform2' action="" method='GET'>
+									<select name='searth'>
+									{%for e in earth%}
+									<option value="{{e.ename}}">{{e.sname}}</option>
+									{%endfor%}
+									<br><br>
+									<input type="submit">
+									</select>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                               <h2>風象星座</h2>
+							<form name='myform3'action="" method='GET'>
+								<select name='sair'>
+									{%for a in air%}
+									<option value="{{a.ename}}">{{a.sname}}</option>
+									{%endfor%}
+									<br><br>
+									</select>
+									<input type="submit">	
+								</form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                               <h2>水象星座</h2>
+							 <form name='myform4' action="" method='GET'>
+							<select name='swater'>
+							{%for w in water%}
+							<option value='{{w.ename}}'>{{w.sname}}</option>
+							{%endfor%}
+							<br><br>
+							<input type="submit">
+							</select>
+							</form>
+							
+                            </div>
+                        </div>
+						
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <h3>火象星座</h3><br>
+							{{sfire}}
+							{%for outf in outfire%}
+							{{outf.name}}
+							{{outf.dateU}}
+							{{outf.personality}}
+							{{outf.color}}
+							{%endfor%}
+							<h3>星座:</h3><br>
+							<h3>日期:</h3><br>
+							<h3>個性:</h3><br>
+							<h3>幸運色:</h3>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <p><h3>土象星座</h3><br>
+							{{searth}}
+							{%for oe in outearth%}
+								{{oe.ename}}
+								{{oe.dateU}}
+								{{oe.personality}}
+								{{oe.color}}
+							{%endfor%}
+							<h3 align="left">星座:</h3><br>
+							<h3 align="left">日期:</h3><br>
+							<h3 align="left">個性:</h3><br>
+							<h3 align="left">幸運色:</h3></p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <p><h3>風象星座</h3><br>
+							{{sair}}					
+							{%for oa in outair%}
+								{{oa.ename}}
+								{{oa.dateU}}
+								{{oa.personality}}
+								{{oa.color}}
+							{%endfor%}
+							<h3 align="left">星座:</h3><br>
+							<h3 align="left">日期:</h3><br>
+							<h3 align="left">個性:</h3><br>
+							<h3 align="left">幸運色:</h3></p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-lg-3 text-center">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                            <p><h3>水象星座</h3><br>
+							{{swater}}
+							{%for ow in outwater%}
+								{{ow.ename}}
+								{{ow.dateU}}
+								{{ow.personality}}
+								{{ow.color}}
+							{%endfor%}
+							<h3 align="left">星座:</h3><br>
+							<h3 align="left">日期:</h3><br>
+							<h3 align="left">個性:</h3><br>
+							<h3 align="left">幸運色:</h3></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <!-- /.row -->
+
+            <!-- /.container-fluid -->
+
+        <!-- /#page-wrapper -->
+		{%endblock%}
